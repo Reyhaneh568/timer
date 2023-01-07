@@ -28,7 +28,6 @@ var Timer = /** @class */ (function () {
     };
     Timer.prototype.render = function () {
         var _this = this;
-        console.log(5);
         var seconds = 0, minutes = 0, hour = 0;
         var MyTimer;
         var Result = document.createElement("div");

@@ -39,7 +39,7 @@ class Timer{
     }
 
     render(){
-        console.log(5);
+        
         let seconds:any=0,minutes=0,hour=0;
         let MyTimer:any;
         let Result = document.createElement("div");
