@@ -7,11 +7,11 @@ new Timer();
 
 class Timer{
   
-    private duration: number;
-    private status: string;
+    private duration: number
+    private status: string
 
     constructor(){
-    this.duration = 0.0;
+    this.duration = 0;
     this.status = "stoped";
     this.render();
     }
@@ -40,12 +40,12 @@ class Timer{
 
     render(){
         let seconds:any=0,minutes=0,hour=0;
-        var MyTimer;
+        let MyTimer:any;
         let Result = document.createElement("div");
         Result.setAttribute("id", "Result");
         let start = document.createElement("button");
         start.textContent = "START";
-        function timer(){
+        function timer(this: any){
             seconds++;
             if(seconds==60){
                     seconds=0;
@@ -59,7 +59,7 @@ class Timer{
                     seconds = "0" + seconds;
                    }
          Result.innerHTML =hour+":"+minutes+":"+seconds;
-         this.duration = +(hour+":"+minutes+":"+seconds);
+         this.duration = hour+":"+minutes+":"+seconds;
         }
         //.................................................................
         //.................................................................
