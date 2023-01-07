@@ -55,6 +55,7 @@ var Timer = /** @class */ (function () {
         //.................................................................
         start.addEventListener("click", function () {
             _this.start();
+            document.body.appendChild(Result);
             MyTimer = setInterval(timer, 1000);
         });
         //.................................................................
@@ -80,6 +81,9 @@ var Timer = /** @class */ (function () {
             Result.innerHTML = 0 + ":" + 0 + ":" + 0;
             MyTimer = setInterval(timer, 1000);
         });
+        document.body.appendChild(start);
+        document.body.appendChild(stop);
+        document.body.appendChild(reset);
     };
     return Timer;
 }());

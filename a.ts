@@ -1,5 +1,4 @@
-const button = document.getElementById('btn');
-
+let button = document.getElementById('btn');
 
 button?.addEventListener('click', function handleClick(event) {
 new Timer();
@@ -67,7 +66,7 @@ class Timer{
         //.................................................................
         start.addEventListener("click", () => {
         this.start();     
-        
+        document.body.appendChild(Result);
          MyTimer = setInterval(timer, 1000);
 
     });
@@ -95,7 +94,10 @@ class Timer{
       Result.innerHTML = 0+":"+0+":"+0;
       MyTimer = setInterval(timer, 1000);
     });
-  
+    document.body.appendChild(start);
+    document.body.appendChild(stop);
+    document.body.appendChild(reset);
+
 }
 
 }
