@@ -4,30 +4,31 @@ button === null || button === void 0 ? void 0 : button.addEventListener('click',
 });
 var Timer = /** @class */ (function () {
     function Timer() {
-        this._duration = 0.0;
-        this._status = "stoped";
+        this.duration = 0;
+        this.status = "stoped";
         this.render();
     }
     Timer.prototype.start = function () {
-        if (this._status === "started") {
+        if (this.status === "started") {
             throw alert("The timer is active");
         }
-        this._status = "started";
+        this.status = "started";
     };
     Timer.prototype.stop = function () {
-        if (this._status === "stoped") {
+        if (this.status === "stoped") {
             throw alert("The timer was stopped");
         }
-        this._status = "stoped";
+        this.status = "stoped";
     };
     Timer.prototype.reset = function () {
-        if (this._status === "started") {
+        if (this.status === "started") {
             this.stop();
         }
-        this._duration = 0.0;
+        this.duration = 0.0;
     };
     Timer.prototype.render = function () {
         var _this = this;
+        console.log(5);
         var seconds = 0, minutes = 0, hour = 0;
         var MyTimer;
         var Result = document.createElement("div");
@@ -48,7 +49,7 @@ var Timer = /** @class */ (function () {
                 seconds = "0" + seconds;
             }
             Result.innerHTML = hour + ":" + minutes + ":" + seconds;
-            this._duration = +(hour + ":" + minutes + ":" + seconds);
+            this.duration = hour + ":" + minutes + ":" + seconds;
         }
         //.................................................................
         //.................................................................
@@ -65,7 +66,7 @@ var Timer = /** @class */ (function () {
         stop.addEventListener("click", function () {
             _this.stop();
             clearInterval(MyTimer);
-            Result.innerHTML = (_this._duration).toString();
+            Result.innerHTML = (_this.duration).toString();
         });
         //.................................................................
         //.................................................................
@@ -74,6 +75,9 @@ var Timer = /** @class */ (function () {
         reset.textContent = "RESET";
         reset.addEventListener("click", function () {
             _this.reset();
+            seconds = 0;
+            minutes = 0;
+            hour = 0;
             Result.innerHTML = 0 + ":" + 0 + ":" + 0;
             MyTimer = setInterval(timer, 1000);
         });

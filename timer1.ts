@@ -39,6 +39,7 @@ class Timer{
     }
 
     render(){
+        console.log(5);
         let seconds:any=0,minutes=0,hour=0;
         let MyTimer:any;
         let Result = document.createElement("div");
@@ -88,6 +89,9 @@ class Timer{
     reset.textContent = "RESET";
     reset.addEventListener("click", () => {
       this.reset();
+      seconds=0;
+      minutes=0;
+      hour=0;
       Result.innerHTML = 0+":"+0+":"+0;
       MyTimer = setInterval(timer, 1000);
     });
